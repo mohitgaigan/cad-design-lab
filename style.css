@@ -12,6 +12,21 @@
   --shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
 }
 
+body.dark {
+  --bg: #0b1020;
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+
+  --card: #111827;
+  --border: #1f2937;
+
+  --primary: #818cf8;
+  --accent: #fbbf24;
+
+  --shadow: 0 30px 60px rgba(0,0,0,0.6);
+}
+
+
 body {
   font-family: "Inter", system-ui, sans-serif;
   background: var(--bg);
@@ -20,21 +35,6 @@ body {
   transition: background 0.3s ease, color 0.3s ease;
 }
 
-
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: "Inter", system-ui, sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  line-height: 1.7;
-  transition: background 0.3s, color 0.3s;
-}
 
 nav {
   display: flex;
@@ -75,7 +75,6 @@ nav a.active {
   font-size: 14px;
   color: var(--text);
 }
-
 
 .hero {
   max-width: 1100px;
