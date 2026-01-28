@@ -40,6 +40,10 @@ nav a {
   color: var(--text);
   font-weight: 500;
 }
+  nav a.active {
+  opacity: 1;
+  border-bottom: 2px solid currentColor;
+}
 
 .toggle {
   margin-left: 24px;
