@@ -11,3 +11,13 @@ toggle.addEventListener("click", () => {
 if (localStorage.getItem("theme") === "dark") {
   document.body.classList.add("dark");
 }
+// Scroll reveal
+const items = document.querySelectorAll(".fade-up");
+const reveal = () => {
+  items.forEach(el => {
+    const top = el.getBoundingClientRect().top;
+    if (top < window.innerHeight - 80) el.classList.add("show");
+  });
+};
+window.addEventListener("scroll", reveal);
+reveal();
