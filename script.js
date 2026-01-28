@@ -1,7 +1,9 @@
 const toggle = document.getElementById("toggle");
+
 toggle.addEventListener("click", () => {
   document.body.classList.toggle("dark");
-  localStorage.setItem("theme",
+  localStorage.setItem(
+    "theme",
     document.body.classList.contains("dark") ? "dark" : "light"
   );
 });
