@@ -10,23 +10,19 @@
   <meta name="author" content="Mohit Kumar">
 
   <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Mohit Kumar | Product Designer">
-  <meta property="og:description" content="Premium portfolio showcasing furniture, workspace & industrial design projects.">
-  <meta property="og:type" content="website">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- CSS -->
   <link rel="stylesheet" href="style.css">
- 
-  <!-- AOS Animation CSS -->
-<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 </head>
+
 <body>
 
-<nav>
+<!-- NAVBAR -->
+<nav class="navbar" data-aos="fade-down">
   <strong>Mohit Kumar</strong>
   <div>
     <a href="index.html">Home</a>
@@ -37,31 +33,42 @@
   </div>
 </nav>
 
-<section data-aos="fade-up">
-  <h1>Product Designer</h1>
-  <p>
+<!-- HERO SECTION -->
+<section class="hero">
+  <div class="hero-bg"></div>
+
+  <h1 data-aos="fade-up">Product Designer</h1>
+
+  <p data-aos="fade-up" data-aos-delay="200">
     Specializing in sheet metal, furniture & workspace design with strong
     experience in NPD, CAD, manufacturing & visualization.
   </p>
 
-  <a href="cv/Mohit_Kumar_CV.pdf" class="btn" download>
+  <a href="cv/Mohit_Kumar_CV.pdf"
+     class="btn"
+     download
+     data-aos="zoom-in"
+     data-aos-delay="400">
     Download CV
   </a>
 </section>
 
-<footer>© 2026 Mohit Kumar</footer>
+<!-- FOOTER -->
+<footer data-aos="fade-up">
+  © 2026 Mohit Kumar
+</footer>
 
 <script src="script.js"></script>
-<!-- AOS Animation JS -->
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 
+<!-- AOS -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>
   AOS.init({
     duration: 1000,
-    once: true
+    once: true,
+    easing: "ease-out-cubic"
   });
 </script>
 
 </body>
 </html>
-
