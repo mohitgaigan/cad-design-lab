@@ -20,6 +20,7 @@
   <!-- CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
 <nav>
@@ -33,22 +34,28 @@
   </div>
 </nav>
 
-<section class="section">
+<section class="section fade-up">
   <h2>Selected Projects</h2>
 
-  <div class="grid">
+  <!-- ===== PROJECT GALLERY GRID ===== -->
+  <div class="gallery">
 
-    <a href="projects/ultratech.html" class="card fade-up">
+    <!-- Project Card -->
+    <a href="projects/ultratech.html" class="gallery-item">
       <img src="images/ultratech.jpg" loading="lazy" alt="UltraTech Office Furniture">
-
-      <h3>UltraTech – Office Furniture</h3>
-      <p>Conference tables, modular workstations, space planning & renders.</p>
+      <div class="caption">
+        <h3>UltraTech – Office Furniture</h3>
+        <p>Conference tables, modular workstations, space planning & renders.</p>
+      </div>
     </a>
 
-    <a href="projects/cfees.html" class="card fade-up">
-      <img src="images/cfees.jpg" alt="CFEES Chemistry Lab">
-      <h3>CFEES – Chemistry Lab</h3>
-      <p>Laboratory furniture, sheet metal design, safety-focused layouts.</p>
+    <!-- Project Card -->
+    <a href="projects/cfees.html" class="gallery-item">
+      <img src="images/cfees.jpg" loading="lazy" alt="CFEES Chemistry Lab">
+      <div class="caption">
+        <h3>CFEES – Chemistry Lab</h3>
+        <p>Laboratory furniture, sheet metal design & safety layouts.</p>
+      </div>
     </a>
 
   </div>
