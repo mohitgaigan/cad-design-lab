@@ -9,8 +9,8 @@
   --card: #ffffff;
   --border: #e2e8f0;
 
-  --primary: #4f46e5;   /* Indigo */
-  --accent: #f59e0b;    /* Amber */
+  --primary: #4f46e5;
+  --accent: #f59e0b;
 
   --shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
 }
@@ -30,7 +30,7 @@ body.dark {
 }
 
 /* ==============================
-   GLOBAL STYLES
+   GLOBAL RESET
    ============================== */
 * {
   margin: 0;
@@ -48,7 +48,6 @@ body {
   color: var(--text);
   line-height: 1.7;
   transition: background 0.3s ease, color 0.3s ease;
-  position: relative;
   overflow-x: hidden;
 }
 
@@ -73,8 +72,8 @@ body.dark::before {
 }
 
 @keyframes bgMove {
-  0%   { transform: translateY(0) translateX(0); }
-  100% { transform: translateY(-40px) translateX(30px); }
+  from { transform: translate(0); }
+  to   { transform: translate(-40px, 30px); }
 }
 
 /* ==============================
@@ -118,83 +117,27 @@ nav a.active {
   border-radius: 999px;
   border: 1px solid var(--border);
   font-size: 14px;
-  color: var(--text);
 }
 
 /* ==============================
-   HERO SECTION
+   HERO
    ============================== */
 .hero {
   max-width: 1100px;
   margin: auto;
   padding: 140px 8% 80px;
-  position: relative;
-  overflow: hidden;
-}
-
-.hero-bg {
-  position: absolute;
-  inset: 0;
-  z-index: -1;
 }
 
 .hero h1 {
   font-size: 56px;
   margin-bottom: 20px;
-  font-weight: 700;
-  animation: heroFloat 6s ease-in-out infinite alternate;
-}
-
-.hero p {
-  font-size: 18px;
-  max-width: 650px;
-  opacity: 0.9;
-  margin-bottom: 20px;
-}
-
-/* Floating blobs on hero */
-.hero::before,
-.hero::after {
-  content: "";
-  position: absolute;
-  width: 320px;
-  height: 320px;
-  border-radius: 50%;
-  filter: blur(90px);
-  opacity: 0.35;
-  z-index: -1;
-  animation: float 12s ease-in-out infinite;
-}
-
-.hero::before {
-  background: var(--primary);
-  top: -80px;
-  left: -100px;
-}
-
-.hero::after {
-  background: var(--accent);
-  bottom: -120px;
-  right: -100px;
-  animation-delay: 4s;
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0) translateX(0); }
-  50% { transform: translateY(-40px) translateX(30px); }
-}
-
-@keyframes heroFloat {
-  from { transform: translateY(0); }
-  to   { transform: translateY(-6px); }
 }
 
 /* ==============================
-   BUTTONS
+   BUTTON
    ============================== */
 .btn {
   display: inline-block;
-  margin-top: 30px;
   padding: 12px 30px;
   border-radius: 999px;
   background: linear-gradient(135deg, var(--primary), var(--accent));
@@ -222,7 +165,6 @@ nav a.active {
 h2 {
   font-size: 34px;
   margin-bottom: 40px;
-  position: relative;
 }
 
 h2::after {
@@ -233,86 +175,55 @@ h2::after {
   margin-top: 14px;
   border-radius: 999px;
   background: linear-gradient(135deg, var(--primary), var(--accent));
-  animation: lineGrow 1.2s ease forwards;
-}
-
-@keyframes lineGrow {
-  from { width: 0; opacity: 0; }
-  to   { width: 60px; opacity: 1; }
 }
 
 /* ==============================
-   GRID & CARDS
-   ============================== */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
-}
-
-.card {
-  background: var(--card);
-  padding: 24px;
-  border-radius: 18px;
-  box-shadow: var(--shadow);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  animation: cardIdle 6s ease-in-out infinite;
-}
-
-.card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 30px 70px rgba(0,0,0,0.25);
-}
-
-.card img {
-  transition: transform 0.4s ease;
-}
-
-.card:hover img {
-  transform: scale(1.04);
-}
-
-/* Card idle motion */
-@keyframes cardIdle {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-4px); }
-}
-
-/* ==============================
-   GALLERY
+   PROJECT GALLERY (MASONRY)
    ============================== */
 .gallery {
   column-count: 3;
-  column-gap: 18px;
+  column-gap: 22px;
 }
 
 .gallery-item {
   break-inside: avoid;
-  margin-bottom: 18px;
-  position: relative;
-  cursor: pointer;
+  margin-bottom: 22px;
 }
 
-.gallery-item img,
-.gallery-item video {
+.gallery-item a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.gallery-item img {
   width: 100%;
-  border-radius: 16px;
+  border-radius: 18px;
   display: block;
   transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
 .gallery-item:hover img {
   transform: scale(1.03);
-  box-shadow: 0 18px 40px rgba(0,0,0,0.2);
+  box-shadow: 0 20px 45px rgba(0,0,0,0.25);
 }
 
 .caption {
+  margin-top: 10px;
   font-size: 14px;
-  opacity: 0.75;
-  margin-top: 6px;
+  color: var(--muted);
 }
 
-/* Lightbox */
+.caption strong {
+  display: block;
+  color: var(--text);
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+/* ==============================
+   LIGHTBOX (READY)
+   ============================== */
 .lightbox {
   position: fixed;
   inset: 0;
@@ -320,43 +231,18 @@ h2::after {
   display: none;
   align-items: center;
   justify-content: center;
-  z-index: 999;
+  z-index: 2000;
 }
 
 .lightbox.show {
   display: flex;
 }
 
-.lightbox-content {
+.lightbox img {
   max-width: 90%;
-  max-height: 90%;
-  text-align: center;
-}
-
-.lightbox img,
-.lightbox video {
-  max-width: 100%;
-  max-height: 80vh;
+  max-height: 85vh;
   border-radius: 18px;
 }
-
-.lightbox p {
-  color: #ccc;
-  margin-top: 12px;
-}
-
-.nav-btn {
-  position: absolute;
-  top: 50%;
-  font-size: 36px;
-  color: #fff;
-  cursor: pointer;
-  padding: 20px;
-  user-select: none;
-}
-
-.nav-btn.left { left: 20px; }
-.nav-btn.right { right: 20px; }
 
 .close-btn {
   position: absolute;
@@ -375,7 +261,6 @@ footer {
   padding: 40px;
   font-size: 14px;
   opacity: 0.7;
-  transition: color 0.3s ease;
 }
 
 /* ==============================
@@ -383,13 +268,13 @@ footer {
    ============================== */
 .fade-up {
   opacity: 0;
-  transform: translateY(32px) scale(0.98);
+  transform: translateY(32px);
   transition: opacity 0.7s ease, transform 0.7s ease;
 }
 
 .fade-up.show {
   opacity: 1;
-  transform: translateY(0) scale(1);
+  transform: translateY(0);
 }
 
 /* ==============================
@@ -399,16 +284,7 @@ footer {
   .gallery { column-count: 2; }
 }
 
-@media (max-width: 768px) {
-  .hero h1 {
-    font-size: 40px;
-  }
-  nav {
-    flex-direction: column;
-    gap: 10px;
-  }
-}
-
 @media (max-width: 600px) {
   .gallery { column-count: 1; }
+  .hero h1 { font-size: 40px; }
 }
