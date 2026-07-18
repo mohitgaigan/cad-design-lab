@@ -13,6 +13,7 @@
   --accent: #f59e0b;
 
   --shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+  --navbar-height: 70px;
 }
 
 body.dark {
@@ -49,6 +50,7 @@ body {
   line-height: 1.7;
   transition: background 0.3s ease, color 0.3s ease;
   overflow-x: hidden;
+  padding-top: var(--navbar-height);
 }
 
 /* ==============================
@@ -91,6 +93,7 @@ nav {
   width: 100%;
   z-index: 1000;
   backdrop-filter: blur(12px);
+  height: var(--navbar-height);
 }
 
 nav strong {
@@ -125,7 +128,7 @@ nav a.active {
 .hero {
   max-width: 1100px;
   margin: auto;
-  padding: 140px 8% 80px;
+  padding: 80px 8%;
 }
 
 .hero h1 {
