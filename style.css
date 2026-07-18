@@ -143,6 +143,44 @@ nav a.active {
   flex-wrap: wrap;
 }
 
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 60px;
+}
+
+.stat-card {
+  background: var(--card);
+  padding: 28px;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+}
+
+.stat-value {
+  font-size: 40px;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 8px;
+}
+
+.stat-label {
+  font-size: 14px;
+  color: var(--muted);
+  font-weight: 500;
+}
+
 /* ==============================
    BUTTON
    ============================== */
@@ -303,6 +341,9 @@ footer {
    ============================== */
 @media (max-width: 900px) {
   .gallery { column-count: 2; }
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 600px) {
@@ -314,5 +355,8 @@ footer {
   .hero-buttons .btn {
     width: 100%;
     text-align: center;
+  }
+  .stats-grid {
+    grid-template-columns: 1fr;
   }
 }
