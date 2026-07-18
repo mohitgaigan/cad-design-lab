@@ -335,7 +335,7 @@ nav a.active {
    SECTIONS
    ============================== */
 .section {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: auto;
   padding: 80px 8%;
 }
@@ -356,47 +356,129 @@ h2::after {
 }
 
 /* ==============================
-   PROJECT GALLERY (MASONRY)
+   PREMIUM CASE STUDY GRID
    ============================== */
-.gallery {
-  column-count: 3;
-  column-gap: 22px;
+.case-study-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 48px;
 }
 
-.gallery-item {
-  break-inside: avoid;
-  margin-bottom: 22px;
+.case-study-card {
+  background: var(--card);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07),
+              0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  min-height: 420px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border);
 }
 
-.gallery-item a {
-  display: block;
-  text-decoration: none;
-  color: inherit;
+.case-study-card:hover {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15),
+              0 30px 60px rgba(0, 0, 0, 0.12);
+  transform: translateY(-8px);
 }
 
-.gallery-item img {
+.card-image-wrapper {
+  position: relative;
   width: 100%;
-  border-radius: 18px;
+  height: 280px;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--border), #f0f4f8);
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   display: block;
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
-.gallery-item:hover img {
-  transform: scale(1.03);
-  box-shadow: 0 20px 45px rgba(0,0,0,0.25);
+.case-study-card:hover .card-image {
+  transform: scale(1.08);
 }
 
-.caption {
-  margin-top: 10px;
-  font-size: 14px;
-  color: var(--muted);
+.card-content {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
-.caption strong {
-  display: block;
+.card-title {
+  font-size: 24px;
+  font-weight: 700;
   color: var(--text);
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+
+.card-description {
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.6;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.tag {
+  display: inline-block;
+  padding: 6px 12px;
+  background: linear-gradient(135deg, rgba(79, 70, 229, 0.1), rgba(245, 158, 11, 0.05));
+  border: 1px solid rgba(79, 70, 229, 0.2);
+  border-radius: 20px;
+  font-size: 12px;
   font-weight: 600;
-  margin-bottom: 4px;
+  color: var(--primary);
+  transition: all 0.3s ease;
+}
+
+.tag:hover {
+  background: linear-gradient(135deg, rgba(79, 70, 229, 0.15), rgba(245, 158, 11, 0.1));
+  border-color: rgba(79, 70, 229, 0.3);
+}
+
+body.dark .tag {
+  color: var(--primary);
+  border-color: rgba(129, 140, 248, 0.2);
+  background: linear-gradient(135deg, rgba(129, 140, 248, 0.1), rgba(251, 191, 36, 0.05));
+}
+
+body.dark .tag:hover {
+  border-color: rgba(129, 140, 248, 0.3);
+  background: linear-gradient(135deg, rgba(129, 140, 248, 0.15), rgba(251, 191, 36, 0.1));
+}
+
+.card-button {
+  display: inline-block;
+  padding: 12px 24px;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  width: fit-content;
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+}
+
+.card-button:hover {
+  transform: translateX(4px);
+  box-shadow: 0 8px 24px rgba(79, 70, 229, 0.3);
 }
 
 /* ==============================
@@ -467,10 +549,17 @@ footer {
   .hero-showcase {
     min-height: 400px;
   }
+
+  .case-study-grid {
+    gap: 40px;
+  }
+
+  .card-content {
+    padding: 28px;
+  }
 }
 
 @media (max-width: 900px) {
-  .gallery { column-count: 2; }
   .stats-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -490,10 +579,17 @@ footer {
   .hero-showcase {
     min-height: 350px;
   }
+
+  .card-image-wrapper {
+    height: 240px;
+  }
+
+  .case-study-card {
+    min-height: 400px;
+  }
 }
 
 @media (max-width: 600px) {
-  .gallery { column-count: 1; }
   .hero-text h1 { font-size: 40px; }
   .hero-buttons {
     flex-direction: column;
@@ -518,6 +614,30 @@ footer {
 
   .hero-showcase {
     min-height: 300px;
+  }
+
+  .case-study-grid {
+    gap: 32px;
+  }
+
+  .card-content {
+    padding: 20px;
+  }
+
+  .card-title {
+    font-size: 20px;
+  }
+
+  .card-description {
+    font-size: 14px;
+  }
+
+  .card-image-wrapper {
+    height: 200px;
+  }
+
+  .case-study-card {
+    min-height: auto;
   }
 
   @keyframes showcaseFloat {
