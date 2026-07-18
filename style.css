@@ -136,6 +136,13 @@ nav a.active {
   margin-bottom: 20px;
 }
 
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  margin-top: 32px;
+  flex-wrap: wrap;
+}
+
 /* ==============================
    BUTTON
    ============================== */
@@ -154,6 +161,17 @@ nav a.active {
 .btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 30px 60px rgba(0,0,0,0.25);
+}
+
+.btn-secondary {
+  background: var(--card);
+  color: var(--text);
+  border: 2px solid var(--primary);
+}
+
+.btn-secondary:hover {
+  background: var(--primary);
+  color: #fff;
 }
 
 /* ==============================
@@ -290,4 +308,11 @@ footer {
 @media (max-width: 600px) {
   .gallery { column-count: 1; }
   .hero h1 { font-size: 40px; }
+  .hero-buttons {
+    flex-direction: column;
+  }
+  .hero-buttons .btn {
+    width: 100%;
+    text-align: center;
+  }
 }
