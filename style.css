@@ -2,31 +2,36 @@
    ROOT VARIABLES
    ============================== */
 :root {
-  --bg: #f8fafc;
-  --text: #0f172a;
-  --muted: #475569;
+  --bg: #fafafa;
+  --text: #111111;
+  --muted: #555555;
 
   --card: #ffffff;
-  --border: #e2e8f0;
+  --border: #e5e5e5;
 
-  --primary: #4f46e5;
-  --accent: #f59e0b;
-
+  --primary: #111111;
+  --accent: #F4C400;
   --shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
   --navbar-height: 70px;
 }
 
 body.dark {
-  --bg: #0b1020;
-  --text: #e5e7eb;
-  --muted: #9ca3af;
 
-  --card: #111827;
-  --border: #1f2937;
+  --bg:#111111;
 
-  --primary: #818cf8;
-  --accent: #fbbf24;
+  --text:#ffffff;
 
+  --muted:#bfbfbf;
+
+  --card:#1b1b1b;
+
+  --border:#333333;
+
+  --primary:#ffffff;
+
+  --accent:#F4C400;
+
+}
   --shadow: 0 30px 60px rgba(0,0,0,0.6);
 }
 
@@ -56,15 +61,29 @@ body {
 /* ==============================
    ANIMATED BACKGROUND
    ============================== */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  background:
-    radial-gradient(circle at 20% 30%, rgba(79,70,229,0.15), transparent 40%),
-    radial-gradient(circle at 80% 70%, rgba(245,158,11,0.15), transparent 40%);
-  animation: bgMove 18s ease-in-out infinite alternate;
+body::before{
+
+content:"";
+
+position:fixed;
+
+inset:0;
+
+z-index:-1;
+
+background:
+
+radial-gradient(circle at 20% 30%,
+rgba(244,196,0,.10),
+transparent 42%),
+
+radial-gradient(circle at 80% 70%,
+rgba(17,17,17,.06),
+transparent 42%);
+
+animation:bgMove 18s ease-in-out infinite alternate;
+
+}
 }
 
 body.dark::before {
@@ -189,7 +208,7 @@ nav a.active {
   ),
   radial-gradient(
     circle at 50% 30%,
-    rgba(79, 70, 229, 0.08) 0%,
+    rgba(244,196,0, 0.08) 0%,
     rgba(148, 163, 255, 0.04) 30%,
     transparent 70%
   );
@@ -287,7 +306,9 @@ nav a.active {
 .stat-value {
   font-size: 40px;
   font-weight: 700;
-  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: var(--primary);
+background:none;
+-webkit-text-fill-color:unset;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -303,32 +324,66 @@ nav a.active {
 /* ==============================
    BUTTON
    ============================== */
-.btn {
-  display: inline-block;
-  padding: 12px 30px;
-  border-radius: 999px;
-  background: linear-gradient(135deg, var(--primary), var(--accent));
-  color: #fff;
-  text-decoration: none;
-  font-weight: 600;
-  box-shadow: var(--shadow);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+.btn{
+
+display:inline-block;
+
+padding:14px 34px;
+
+background:#111111;
+
+color:#ffffff;
+
+font-weight:600;
+
+border-radius:999px;
+
+transition:.3s;
+
+text-decoration:none;
+
 }
 
-.btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 30px 60px rgba(0,0,0,0.25);
+.btn:hover{
+
+background:#F4C400;
+
+color:#111111;
+
 }
 
-.btn-secondary {
-  background: var(--card);
-  color: var(--text);
-  border: 2px solid var(--primary);
+.btn-secondary{
+
+background:transparent;
+
+border:2px solid #111111;
+
+color:#111111;
+
 }
 
-.btn-secondary:hover {
-  background: var(--primary);
-  color: #fff;
+.btn-secondary:hover{
+
+background:#111111;
+
+color:#ffffff;
+
+}
+
+body.dark .btn-secondary{
+
+border-color:#ffffff;
+
+color:#ffffff;
+
+}
+
+body.dark .btn-secondary:hover{
+
+background:#ffffff;
+
+color:#111111;
+
 }
 
 /* ==============================
@@ -352,7 +407,9 @@ h2::after {
   height: 4px;
   margin-top: 14px;
   border-radius: 999px;
-  background: linear-gradient(135deg, var(--primary), var(--accent));
+ color: var(--primary);
+background:none;
+-webkit-text-fill-color:unset;
 }
 
 /* ==============================
@@ -434,7 +491,7 @@ h2::after {
   margin-bottom: 24px;
 }
 
-.tag {
+.tag{  background:rgba(244,196,0,.12);  color:#111111;  border:1px solid rgba(244,196,0,.35);  }
   display: inline-block;
   padding: 6px 12px;
   background: linear-gradient(135deg, rgba(79, 70, 229, 0.1), rgba(245, 158, 11, 0.05));
@@ -451,7 +508,7 @@ h2::after {
   border-color: rgba(79, 70, 229, 0.3);
 }
 
-body.dark .tag {
+body.dark .tag{  background:rgba(244,196,0,.12);  color:#111111;  border:1px solid rgba(244,196,0,.35);  }
   color: var(--primary);
   border-color: rgba(129, 140, 248, 0.2);
   background: linear-gradient(135deg, rgba(129, 140, 248, 0.1), rgba(251, 191, 36, 0.05));
@@ -462,10 +519,12 @@ body.dark .tag:hover {
   background: linear-gradient(135deg, rgba(129, 140, 248, 0.15), rgba(251, 191, 36, 0.1));
 }
 
-.card-button {
+.card-button{  background:#111111;  color:#ffffff;  }  .card-button:hover{  background:#F4C400;  color:#111111;  } {
   display: inline-block;
   padding: 12px 24px;
-  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: var(--primary);
+background:none;
+-webkit-text-fill-color:unset;
   color: #fff;
   text-decoration: none;
   font-weight: 600;
@@ -476,7 +535,7 @@ body.dark .tag:hover {
   box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
 }
 
-.card-button:hover {
+.card-button{  background:#111111;  color:#ffffff;  }  .card-button:hover{  background:#F4C400;  color:#111111;  }:hover {
   transform: translateX(4px);
   box-shadow: 0 8px 24px rgba(79, 70, 229, 0.3);
 }
