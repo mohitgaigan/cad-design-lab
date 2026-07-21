@@ -140,3 +140,244 @@ const appearOnScroll = new IntersectionObserver((entries, observer) => {
 faders.forEach(fader => {
   appearOnScroll.observe(fader);
 });
+/* =====================================================
+PRODUCT GALLERY DATABASE
+===================================================== */
+
+const galleryItems = [
+
+/* =========================
+OFFICE FURNITURE
+========================= */
+
+{
+title:"Staff Workstation",
+category:"office",
+image:"images/gallery/STAFF WORKSTATION IMAGE.JPG"
+},
+
+{
+title:"Executive Workstation",
+category:"office",
+image:"images/gallery/EXECUTIVE WORKSTATION.JPG"
+},
+
+{
+title:"Office Workstation",
+category:"office",
+image:"images/gallery/WORKSTATION.jpg"
+},
+
+{
+title:"Conference Table",
+category:"tables",
+image:"images/gallery/CONFERENCE TABLE X.png"
+},
+
+{
+title:"Reception Counter",
+category:"office",
+image:"images/gallery/RECEPTION.jpg"
+},
+
+{
+title:"Reception Table",
+category:"office",
+image:"images/gallery/RECEPTION TABLE.jpg"
+},
+
+{
+title:"Office Floor",
+category:"office",
+image:"images/gallery/OFFICE FLOOR.jpg"
+},
+
+{
+title:"Student Desk",
+category:"office",
+image:"images/gallery/STUDENT DESK.jpg"
+},
+
+{
+title:"Writing Pad Chair",
+category:"office",
+image:"images/gallery/WRITING PAD CHAIR.jpg"
+},
+
+{
+title:"Center Table",
+category:"tables",
+image:"images/gallery/CENTER TABLE.jpg"
+},
+
+{
+title:"Wooden Table",
+category:"tables",
+image:"images/gallery/WOODEN TABLE.jpg"
+},
+
+/* =========================
+LABORATORY
+========================= */
+
+{
+title:"Laboratory Reception",
+category:"laboratory",
+image:"images/gallery/LAB RECEPTION.png"
+},
+
+{
+title:"Laboratory Lobby",
+category:"laboratory",
+image:"images/gallery/LAB LOBBY.png"
+},
+
+{
+title:"Laboratory Layout",
+category:"laboratory",
+image:"images/gallery/LAB LAYOUT.png"
+},
+
+{
+title:"Laboratory Cluster",
+category:"laboratory",
+image:"images/gallery/LAB CLUSTER.png"
+},
+
+{
+title:"Chemical Storage",
+category:"laboratory",
+image:"images/gallery/CHEMICAL STORAGE.png"
+},
+
+{
+title:"Laboratory Unit",
+category:"laboratory",
+image:"images/gallery/LAB UNIT.png"
+},
+
+/* =========================
+STORAGE
+========================= */
+
+{
+title:"Sliding Storage",
+category:"storage",
+image:"images/gallery/SLIDING STORAGE.jpg"
+},
+
+{
+title:"Metal Storage",
+category:"storage",
+image:"images/gallery/METAL STORAGE.jpg"
+},
+
+{
+title:"Wooden Locker",
+category:"storage",
+image:"images/gallery/WOODEN LOCKER.jpg"
+},
+
+{
+title:"Mobile Locker",
+category:"storage",
+image:"images/gallery/MOBILE LOCKER.jpg"
+},
+
+{
+title:"Magazine Rack",
+category:"storage",
+image:"images/gallery/MAGAZINE RACK.jpg"
+},
+
+{
+title:"Shoe Rack",
+category:"storage",
+image:"images/gallery/SHOE RACK.jpg"
+},
+
+{
+title:"Steel Almirah",
+category:"storage",
+image:"images/gallery/STEEL ALMIRAH.jpg"
+},
+
+/* =========================
+BEDS
+========================= */
+
+{
+title:"Metal Bed",
+category:"beds",
+image:"images/gallery/METAL BED 5.png"
+},
+
+{
+title:"Folding Bed",
+category:"beds",
+image:"images/gallery/FOLDING BED.png"
+},
+
+{
+title:"Bunk Bed",
+category:"beds",
+image:"images/gallery/BUNK BED.jpg"
+},
+
+/* =========================
+INDUSTRIAL
+========================= */
+
+{
+title:"Powder Coating Plant",
+category:"industrial",
+image:"images/gallery/POWDER COATING PLANT.jpg"
+},
+
+{
+title:"Powder Coating Trolley",
+category:"industrial",
+image:"images/gallery/POWDER COATING TROLLEY.jpg"
+},
+
+{
+title:"Industrial Product",
+category:"industrial",
+image:"images/gallery/AGI.jpg"
+},
+
+{
+title:"Industrial Product",
+category:"industrial",
+image:"images/gallery/BU.jpg"
+},
+
+{
+title:"Industrial Product",
+category:"industrial",
+image:"images/gallery/CF.jpg"
+},
+
+/* =========================
+LAYOUTS
+========================= */
+
+{
+title:"Room Layout",
+category:"layouts",
+image:"images/gallery/ROOM LAYOUT.png"
+},
+
+{
+title:"Room 405",
+category:"layouts",
+image:"images/gallery/ROOM 405.png"
+},
+
+{
+title:"Room 407",
+category:"layouts",
+image:"images/gallery/ROOM 407.png"
+}
+
+];
