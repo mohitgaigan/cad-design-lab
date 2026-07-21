@@ -31,44 +31,51 @@ navLinks.forEach(link => {
 });
 
 // ===== GALLERY LIGHTBOX =====
+const items = document.querySelectorAll(".gallery-item");
+if (items.length) {
+  let index = 0;
 
-const cards = document.querySelectorAll(".gallery-card");
-const lightbox = document.getElementById("lightbox");
+  const lightbox = document.createElement("div");
+  lightbox.className = "lightbox";
+  lightbox.innerHTML = `
+    <span class="close-btn">×</span>
+    <span class="nav-btn left">‹</span>
+    <span class="nav-btn right">›</span>
+    <div class="lightbox-content"></div>
+  `;
+  document.body.appendChild(lightbox);
 
-if (cards.length && lightbox) {
+  const content = lightbox.querySelector(".lightbox-content");
 
-    const lightboxImage = document.getElementById("lightboxImage");
-    const lightboxTitle = document.getElementById("lightboxTitle");
-    const closeBtn = document.getElementById("closeLightbox");
+  const showItem = i => {
+    const el = items[i].cloneNode(true);
+    content.innerHTML = "";
+    content.appendChild(el);
+    lightbox.classList.add("show");
+    index = i;
+  };
 
-    cards.forEach(card => {
+  items.forEach((item, i) => {
+    item.onclick = () => showItem(i);
+  });
 
-        card.addEventListener("click", () => {
+  lightbox.querySelector(".close-btn").onclick = () =>
+    lightbox.classList.remove("show");
 
-            const img = card.querySelector("img");
-            const title = card.querySelector("h3").textContent;
+  lightbox.querySelector(".left").onclick = () =>
+    showItem((index - 1 + items.length) % items.length);
 
-            lightboxImage.src = img.getAttribute("src");
-          console.log(lightboxImage.src);
-            lightboxTitle.textContent = title;
+  lightbox.querySelector(".right").onclick = () =>
+    showItem((index + 1) % items.length);
 
-            lightbox.style.display = "flex";
-
-        });
-
-    });
-
-    closeBtn.addEventListener("click", () => {
-        lightbox.style.display = "none";
-    });
-
-    lightbox.addEventListener("click", e => {
-        if (e.target === lightbox) {
-            lightbox.style.display = "none";
-        }
-    });
-
+  document.addEventListener("keydown", e => {
+    if (!lightbox.classList.contains("show")) return;
+    if (e.key === "Escape") lightbox.classList.remove("show");
+    if (e.key === "ArrowRight") showItem((index + 1) % items.length);
+    if (e.key === "ArrowLeft") showItem((index - 1 + items.length) % items.length);
+  });
 }
+
 // ===== HERO FLOATING BLOBS =====
 const heroBg = document.querySelector(".hero-bg");
 if (heroBg) {
