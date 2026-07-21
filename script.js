@@ -48,7 +48,8 @@ if (cards.length && lightbox) {
             const img = card.querySelector("img");
             const title = card.querySelector("h3").textContent;
 
-            lightboxImage.src = img.src;
+            lightboxImage.src = img.getAttribute("src");
+          console.log(lightboxImage.src);
             lightboxTitle.textContent = title;
 
             lightbox.style.display = "flex";
