@@ -32,42 +32,40 @@ navLinks.forEach(link => {
 
 // ===== GALLERY LIGHTBOX =====
 
-const galleryCards = document.querySelectorAll(".gallery-card");
+const cards = document.querySelectorAll(".gallery-card");
+const lightbox = document.getElementById("lightbox");
 
-if (galleryCards.length) {
+if (cards.length && lightbox) {
 
-    const lightbox = document.getElementById("lightbox");
-    const lightboxImg = document.getElementById("lightbox-img");
-    const lightboxCaption = document.getElementById("lightbox-caption");
-    const closeBtn = document.querySelector(".lightbox-close");
+    const lightboxImage = document.getElementById("lightboxImage");
+    const lightboxTitle = document.getElementById("lightboxTitle");
+    const closeBtn = document.getElementById("closeLightbox");
 
-    galleryCards.forEach(card => {
+    cards.forEach(card => {
 
         card.addEventListener("click", () => {
 
             const img = card.querySelector("img");
+            const title = card.querySelector("h3").textContent;
 
-            const title = card.querySelector("h3")
-                ? card.querySelector("h3").innerText
-                : "";
+            lightboxImage.src = img.src;
+            lightboxTitle.textContent = title;
 
             lightbox.style.display = "flex";
-            lightboxImg.src = img.src;
-            lightboxCaption.textContent = title;
 
         });
 
     });
 
-    closeBtn.onclick = () => {
+    closeBtn.addEventListener("click", () => {
         lightbox.style.display = "none";
-    };
+    });
 
-    lightbox.onclick = (e) => {
+    lightbox.addEventListener("click", e => {
         if (e.target === lightbox) {
             lightbox.style.display = "none";
         }
-    };
+    });
 
 }
 // ===== HERO FLOATING BLOBS =====
