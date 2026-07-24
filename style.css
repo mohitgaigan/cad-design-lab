@@ -358,10 +358,10 @@ h2::after {
 /* ==============================
    PREMIUM  STUDY GRID
    ============================== */
-.case-study-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 48px;
+.case-study-grid{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
 }
 
 .case-study-card{
