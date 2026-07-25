@@ -952,3 +952,55 @@ max-width:96%;
     font-size:15px;
     line-height:1.6;
 }
+
+/* ============================
+   GALLERY FIX
+============================ */
+
+.gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:30px;
+}
+
+.gallery-card{
+    background:var(--card);
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:var(--shadow);
+    transition:.35s;
+    cursor:pointer;
+    display:block;
+    opacity:1 !important;
+    visibility:visible !important;
+}
+
+.gallery-card img{
+    width:100%;
+    height:260px;
+    object-fit:cover;
+    display:block;
+    opacity:1 !important;
+    visibility:visible !important;
+}
+
+.gallery-card:hover{
+    transform:translateY(-8px);
+}
+
+.gallery-info{
+    padding:18px;
+}
+
+.gallery-info h3{
+    margin-bottom:8px;
+}
+
+.gallery-info p{
+    color:var(--muted);
+}
+
+.fade-up{
+    opacity:1 !important;
+    transform:none !important;
+}
