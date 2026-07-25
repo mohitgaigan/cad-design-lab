@@ -201,3 +201,37 @@ filterButtons.forEach(button => {
     });
 
 });
+
+// ===== GALLERY SEARCH =====
+
+const searchInput = document.getElementById("gallerySearch");
+
+if (searchInput) {
+
+    searchInput.addEventListener("keyup", function () {
+
+        const value = this.value.toLowerCase();
+
+        galleryItems.forEach(item => {
+
+            const title = item.querySelector("h3").textContent.toLowerCase();
+            const category = item.dataset.category.toLowerCase();
+
+            if (
+                title.includes(value) ||
+                category.includes(value)
+            ) {
+
+                item.style.display = "block";
+
+            } else {
+
+                item.style.display = "none";
+
+            }
+
+        });
+
+    });
+
+}
