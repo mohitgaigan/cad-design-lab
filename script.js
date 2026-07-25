@@ -31,50 +31,80 @@ navLinks.forEach(link => {
 });
 
 // ===== GALLERY LIGHTBOX =====
-const items = document.querySelectorAll(".gallery-item");
-if (items.length) {
-  let index = 0;
 
-  const lightbox = document.createElement("div");
-  lightbox.className = "lightbox";
-  lightbox.innerHTML = `
-    <span class="close-btn">×</span>
-    <span class="nav-btn left">‹</span>
-    <span class="nav-btn right">›</span>
-    <div class="lightbox-content"></div>
-  `;
-  document.body.appendChild(lightbox);
+const galleryCards = document.querySelectorAll(".gallery-card");
 
-  const content = lightbox.querySelector(".lightbox-content");
+const lightbox = document.getElementById("lightbox");
+const lightboxImage = document.getElementById("lightboxImage");
+const lightboxTitle = document.getElementById("lightboxTitle");
+const closeLightbox = document.getElementById("closeLightbox");
+const prevBtn = document.getElementById("prevImage");
+const nextBtn = document.getElementById("nextImage");
 
-  const showItem = i => {
-    const el = items[i].cloneNode(true);
-    content.innerHTML = "";
-    content.appendChild(el);
-    lightbox.classList.add("show");
-    index = i;
-  };
+if (galleryCards.length && lightbox) {
 
-  items.forEach((item, i) => {
-    item.onclick = () => showItem(i);
-  });
+    let currentIndex = 0;
 
-  lightbox.querySelector(".close-btn").onclick = () =>
-    lightbox.classList.remove("show");
+    function openLightbox(index){
 
-  lightbox.querySelector(".left").onclick = () =>
-    showItem((index - 1 + items.length) % items.length);
+        currentIndex = index;
 
-  lightbox.querySelector(".right").onclick = () =>
-    showItem((index + 1) % items.length);
+        const img = galleryCards[index].querySelector("img");
 
-  document.addEventListener("keydown", e => {
-    if (!lightbox.classList.contains("show")) return;
-    if (e.key === "Escape") lightbox.classList.remove("show");
-    if (e.key === "ArrowRight") showItem((index + 1) % items.length);
-    if (e.key === "ArrowLeft") showItem((index - 1 + items.length) % items.length);
-  });
+        lightboxImage.src = img.src;
+        lightboxImage.alt = img.alt;
+
+        const title = galleryCards[index].querySelector("h3");
+
+        lightboxTitle.textContent = title ? title.textContent : "";
+
+        lightbox.classList.add("show");
+    }
+
+    galleryCards.forEach((card,index)=>{
+
+        card.addEventListener("click",()=>{
+
+            openLightbox(index);
+
+        });
+
+    });
+
+    closeLightbox.onclick=()=>{
+
+        lightbox.classList.remove("show");
+
+    };
+
+    nextBtn.onclick=()=>{
+
+        currentIndex=(currentIndex+1)%galleryCards.length;
+
+        openLightbox(currentIndex);
+
+    };
+
+    prevBtn.onclick=()=>{
+
+        currentIndex=(currentIndex-1+galleryCards.length)%galleryCards.length;
+
+        openLightbox(currentIndex);
+
+    };
+
+    window.addEventListener("click",(e)=>{
+
+        if(e.target===lightbox){
+
+            lightbox.classList.remove("show");
+
+        }
+
+    });
+
 }
+
 
 // ===== HERO FLOATING BLOBS =====
 const heroBg = document.querySelector(".hero-bg");
