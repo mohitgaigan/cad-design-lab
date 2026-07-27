@@ -1453,3 +1453,1328 @@ grid-template-columns:1fr;
 }
 
 }
+
+/* ===========================================================
+   WORKSTATION CASE STUDY - PREMIUM HERO
+   Only affects workstation-layout.html
+=========================================================== */
+
+.hero-case-study{
+    position:relative;
+    height:100vh;
+    min-height:780px;
+    overflow:hidden;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    isolation:isolate;
+}
+
+.hero-background{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center;
+    transform:scale(1.05);
+    animation:heroZoom 18s ease-in-out infinite alternate;
+}
+
+.hero-overlay{
+    position:absolute;
+    inset:0;
+    background:
+    linear-gradient(
+        180deg,
+        rgba(10,15,25,.15) 0%,
+        rgba(10,15,25,.45) 55%,
+        rgba(10,15,25,.82) 100%);
+    z-index:1;
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    width:min(1200px,90%);
+    color:#fff;
+}
+
+.project-label{
+
+display:inline-block;
+
+padding:10px 22px;
+
+border-radius:50px;
+
+background:rgba(255,255,255,.12);
+
+backdrop-filter:blur(18px);
+
+border:1px solid rgba(255,255,255,.18);
+
+font-size:.85rem;
+
+font-weight:700;
+
+letter-spacing:2px;
+
+margin-bottom:28px;
+
+text-transform:uppercase;
+
+}
+
+.hero-case-study h1{
+
+font-size:clamp(3rem,7vw,5.6rem);
+
+line-height:1.05;
+
+font-weight:800;
+
+margin-bottom:28px;
+
+max-width:900px;
+
+}
+
+.hero-case-study p{
+
+font-size:1.15rem;
+
+line-height:1.9;
+
+max-width:760px;
+
+opacity:.95;
+
+margin-bottom:42px;
+
+}
+
+.hero-buttons{
+
+display:flex;
+
+gap:20px;
+
+flex-wrap:wrap;
+
+}
+
+.hero-case-study .btn{
+
+padding:16px 36px;
+
+font-size:15px;
+
+}
+
+.scroll-indicator{
+
+position:absolute;
+
+left:50%;
+
+bottom:35px;
+
+transform:translateX(-50%);
+
+font-size:34px;
+
+color:#fff;
+
+opacity:.8;
+
+animation:bounceArrow 2s infinite;
+
+z-index:2;
+
+}
+
+@keyframes bounceArrow{
+
+0%,100%{
+
+transform:translate(-50%,0);
+
+}
+
+50%{
+
+transform:translate(-50%,12px);
+
+}
+
+}
+
+@keyframes heroZoom{
+
+from{
+
+transform:scale(1.05);
+
+}
+
+to{
+
+transform:scale(1.12);
+
+}
+
+}
+
+/* ===========================================================
+PROJECT INFORMATION
+=========================================================== */
+
+.project-info-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+gap:24px;
+
+margin-top:-90px;
+
+position:relative;
+
+z-index:20;
+
+}
+
+.info-card{
+
+background:rgba(255,255,255,.78);
+
+backdrop-filter:blur(18px);
+
+border:1px solid rgba(255,255,255,.35);
+
+padding:30px;
+
+border-radius:22px;
+
+box-shadow:0 20px 60px rgba(0,0,0,.12);
+
+transition:.35s;
+
+}
+
+body.dark .info-card{
+
+background:rgba(17,24,39,.82);
+
+border:1px solid rgba(255,255,255,.06);
+
+}
+
+.info-card:hover{
+
+transform:translateY(-8px);
+
+box-shadow:0 35px 70px rgba(0,0,0,.18);
+
+}
+
+.info-card h5{
+
+font-size:.75rem;
+
+letter-spacing:2px;
+
+text-transform:uppercase;
+
+margin-bottom:12px;
+
+color:var(--accent);
+
+font-weight:700;
+
+}
+
+.info-card h3{
+
+font-size:1.15rem;
+
+font-weight:700;
+
+color:var(--text);
+
+}
+
+/* ===========================================================
+SECTION TAG
+=========================================================== */
+
+.section-tag{
+
+display:inline-block;
+
+padding:8px 18px;
+
+margin-bottom:18px;
+
+background:linear-gradient(135deg,var(--primary),var(--accent));
+
+color:#fff;
+
+font-size:.78rem;
+
+font-weight:700;
+
+letter-spacing:1.5px;
+
+text-transform:uppercase;
+
+border-radius:40px;
+
+box-shadow:0 12px 25px rgba(79,70,229,.22);
+
+}
+
+/* ===========================================================
+PREMIUM SECTION TITLE
+=========================================================== */
+
+.section-title{
+
+max-width:850px;
+
+margin:0 auto 70px;
+
+text-align:center;
+
+}
+
+.section-title h2{
+
+font-size:clamp(2.3rem,4vw,3.3rem);
+
+margin-bottom:20px;
+
+font-weight:800;
+
+}
+
+.section-title p{
+
+font-size:1.05rem;
+
+line-height:1.9;
+
+color:var(--muted);
+
+}
+
+/* ===========================================================
+CASE STUDY CARD
+=========================================================== */
+
+.case-study-card{
+
+padding:55px;
+
+border-radius:26px;
+
+background:var(--card);
+
+border:1px solid var(--border);
+
+box-shadow:0 25px 60px rgba(0,0,0,.08);
+
+transition:.35s;
+
+}
+
+.case-study-card:hover{
+
+transform:translateY(-6px);
+
+box-shadow:0 35px 70px rgba(0,0,0,.12);
+
+}
+
+.case-study-card h2{
+
+font-size:2rem;
+
+margin-bottom:24px;
+
+}
+
+.case-study-card p{
+
+font-size:1rem;
+
+line-height:2;
+
+color:var(--muted);
+
+}
+
+/* ===========================================================
+PROJECT IMAGE
+=========================================================== */
+
+.project-image{
+
+overflow:hidden;
+
+border-radius:28px;
+
+box-shadow:0 25px 60px rgba(0,0,0,.14);
+
+margin:35px 0;
+
+}
+
+.project-image img{
+
+display:block;
+
+width:100%;
+
+transition:transform .8s ease;
+
+}
+
+.project-image:hover img{
+
+transform:scale(1.05);
+
+}
+/* ===========================================================
+   WORKSTATION CASE STUDY - PART 2
+   Feature Cards • Timeline • Materials • Statistics
+===========================================================*/
+
+/* ===========================
+   FEATURE GRID
+=========================== */
+
+.feature-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:28px;
+    margin-top:30px;
+}
+
+.feature-card{
+
+    position:relative;
+
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    border-radius:24px;
+
+    padding:40px 30px;
+
+    overflow:hidden;
+
+    transition:.35s ease;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.06);
+
+}
+
+.feature-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    top:0;
+
+    width:100%;
+
+    height:5px;
+
+    background:linear-gradient(
+        90deg,
+        var(--primary),
+        var(--accent)
+    );
+
+    transform:scaleX(0);
+
+    transform-origin:left;
+
+    transition:.4s;
+
+}
+
+.feature-card:hover::before{
+
+    transform:scaleX(1);
+
+}
+
+.feature-card:hover{
+
+    transform:translateY(-12px);
+
+    box-shadow:0 30px 60px rgba(0,0,0,.12);
+
+}
+
+.feature-card h3{
+
+    font-size:48px;
+
+    margin-bottom:18px;
+
+}
+
+.feature-card h4{
+
+    font-size:22px;
+
+    margin-bottom:15px;
+
+    font-weight:700;
+
+}
+
+.feature-card p{
+
+    color:var(--muted);
+
+    line-height:1.9;
+
+    font-size:15px;
+
+}
+
+/* ===========================
+   LARGE PROJECT IMAGES
+=========================== */
+
+.large-image{
+
+    margin:50px 0;
+
+    border-radius:30px;
+
+    overflow:hidden;
+
+    position:relative;
+
+    box-shadow:0 30px 70px rgba(0,0,0,.16);
+
+}
+
+.large-image img{
+
+    width:100%;
+
+    display:block;
+
+    transition:transform .8s ease;
+
+}
+
+.large-image:hover img{
+
+    transform:scale(1.06);
+
+}
+
+.large-image::after{
+
+    content:"Click image to view details";
+
+    position:absolute;
+
+    bottom:25px;
+
+    left:25px;
+
+    background:rgba(0,0,0,.65);
+
+    color:#fff;
+
+    padding:10px 18px;
+
+    border-radius:40px;
+
+    font-size:.85rem;
+
+    backdrop-filter:blur(12px);
+
+}
+
+/* ===========================
+   PROJECT STATISTICS
+=========================== */
+
+.project-stats{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:25px;
+
+}
+
+.project-stats .stat-card{
+
+    padding:40px 25px;
+
+    border-radius:22px;
+
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    text-align:center;
+
+    transition:.35s;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.06);
+
+}
+
+.project-stats .stat-card:hover{
+
+    transform:translateY(-10px);
+
+}
+
+.project-stats .stat-card h2{
+
+    font-size:54px;
+
+    font-weight:800;
+
+    margin-bottom:12px;
+
+    background:linear-gradient(
+        135deg,
+        var(--primary),
+        var(--accent)
+    );
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+
+    background-clip:text;
+
+}
+
+.project-stats .stat-card h2::after{
+
+    display:none;
+
+}
+
+.project-stats .stat-card p{
+
+    font-size:15px;
+
+    font-weight:600;
+
+    color:var(--muted);
+
+}
+
+/* ===========================
+   MATERIAL SECTION
+=========================== */
+
+.material-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:25px;
+
+}
+
+.material-card{
+
+    padding:30px;
+
+    background:var(--card);
+
+    border-radius:22px;
+
+    border:1px solid var(--border);
+
+    text-align:center;
+
+    transition:.35s;
+
+}
+
+.material-card:hover{
+
+    transform:translateY(-10px);
+
+}
+
+.material-card h4{
+
+    margin-bottom:12px;
+
+    color:var(--primary);
+
+}
+
+.material-card p{
+
+    color:var(--muted);
+
+}
+
+/* ===========================
+   TIMELINE
+=========================== */
+
+.timeline{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+
+    gap:30px;
+
+    margin-top:40px;
+
+}
+
+.timeline-item{
+
+    position:relative;
+
+    background:var(--card);
+
+    border-radius:24px;
+
+    border:1px solid var(--border);
+
+    padding:35px;
+
+    transition:.35s;
+
+    overflow:hidden;
+
+}
+
+.timeline-item:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 25px 50px rgba(0,0,0,.10);
+
+}
+
+.timeline-number{
+
+    width:70px;
+
+    height:70px;
+
+    border-radius:50%;
+
+    background:linear-gradient(
+        135deg,
+        var(--primary),
+        var(--accent)
+    );
+
+    color:#fff;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:26px;
+
+    font-weight:700;
+
+    margin-bottom:24px;
+
+}
+
+.timeline-item h3{
+
+    font-size:24px;
+
+    margin-bottom:15px;
+
+}
+
+.timeline-item p{
+
+    color:var(--muted);
+
+    line-height:1.9;
+
+}
+
+/* ===========================
+   TECH STACK
+=========================== */
+
+.tech-stack{
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:18px;
+
+}
+
+.tech-stack span{
+
+    padding:15px 28px;
+
+    border-radius:50px;
+
+    border:2px solid var(--primary);
+
+    background:var(--card);
+
+    font-weight:600;
+
+    transition:.35s;
+
+}
+
+.tech-stack span:hover{
+
+    background:linear-gradient(
+        135deg,
+        var(--primary),
+        var(--accent)
+    );
+
+    color:#fff;
+
+    border-color:transparent;
+
+    transform:translateY(-5px);
+
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:900px){
+
+.feature-grid,
+.timeline,
+.project-stats,
+.material-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.large-image{
+
+margin:30px 0;
+
+}
+
+.timeline-number{
+
+width:60px;
+
+height:60px;
+
+font-size:22px;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.feature-card{
+
+padding:30px 24px;
+
+}
+
+.large-image::after{
+
+display:none;
+
+}
+
+.project-stats .stat-card h2{
+
+font-size:42px;
+
+}
+
+}
+/* ===========================================================
+   WORKSTATION CASE STUDY - PART 3
+   Quote • Outcome • Navigation • CTA • Footer
+===========================================================*/
+
+/* ===========================
+   PROJECT OUTCOME
+=========================== */
+
+.outcome-card{
+
+background:linear-gradient(
+135deg,
+rgba(79,70,229,.05),
+rgba(245,158,11,.05));
+
+border:1px solid rgba(79,70,229,.12);
+
+}
+
+body.dark .outcome-card{
+
+background:linear-gradient(
+135deg,
+rgba(129,140,248,.08),
+rgba(251,191,36,.05));
+
+}
+
+/* ===========================
+   QUOTE SECTION
+=========================== */
+
+.quote-section{
+
+max-width:900px;
+
+margin:auto;
+
+padding:80px 60px;
+
+text-align:center;
+
+border-radius:30px;
+
+background:linear-gradient(
+135deg,
+var(--primary),
+var(--accent));
+
+color:#fff;
+
+box-shadow:0 35px 80px rgba(0,0,0,.18);
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.quote-section::before{
+
+content:"“";
+
+position:absolute;
+
+top:-50px;
+
+left:40px;
+
+font-size:180px;
+
+opacity:.08;
+
+font-family:Georgia,serif;
+
+}
+
+.quote-section h2{
+
+font-size:clamp(2rem,4vw,3rem);
+
+line-height:1.5;
+
+font-weight:700;
+
+margin-bottom:30px;
+
+}
+
+.quote-section h2::after{
+
+display:none;
+
+}
+
+.quote-section p{
+
+font-size:18px;
+
+font-weight:600;
+
+letter-spacing:1px;
+
+opacity:.9;
+
+}
+
+/* ===========================
+   PROJECT NAVIGATION
+=========================== */
+
+.project-navigation{
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:30px;
+
+margin-top:40px;
+
+}
+
+.project-nav-card{
+
+display:block;
+
+padding:35px;
+
+border-radius:24px;
+
+background:var(--card);
+
+border:1px solid var(--border);
+
+text-decoration:none;
+
+color:inherit;
+
+transition:.35s;
+
+box-shadow:0 15px 35px rgba(0,0,0,.06);
+
+}
+
+.project-nav-card:hover{
+
+transform:translateY(-10px);
+
+box-shadow:0 30px 60px rgba(0,0,0,.12);
+
+border-color:var(--primary);
+
+}
+
+.project-nav-card span{
+
+display:inline-block;
+
+font-size:.8rem;
+
+font-weight:700;
+
+letter-spacing:1px;
+
+text-transform:uppercase;
+
+color:var(--accent);
+
+margin-bottom:18px;
+
+}
+
+.project-nav-card h3{
+
+font-size:1.45rem;
+
+margin-bottom:15px;
+
+}
+
+.project-nav-card p{
+
+font-size:15px;
+
+line-height:1.8;
+
+color:var(--muted);
+
+}
+
+/* ===========================
+   CTA SECTION
+=========================== */
+
+.cta-banner{
+
+padding:90px 70px;
+
+border-radius:32px;
+
+text-align:center;
+
+background:linear-gradient(
+135deg,
+var(--primary),
+var(--accent));
+
+color:#fff;
+
+box-shadow:0 35px 80px rgba(0,0,0,.18);
+
+}
+
+.cta-banner h2{
+
+font-size:clamp(2.3rem,4vw,3.5rem);
+
+margin-bottom:25px;
+
+}
+
+.cta-banner h2::after{
+
+display:none;
+
+}
+
+.cta-banner p{
+
+max-width:760px;
+
+margin:auto;
+
+font-size:18px;
+
+line-height:2;
+
+margin-bottom:45px;
+
+opacity:.95;
+
+}
+
+.cta-banner .btn{
+
+background:#fff;
+
+color:#111827;
+
+font-weight:700;
+
+padding:18px 40px;
+
+}
+
+.cta-banner .btn:hover{
+
+transform:translateY(-5px);
+
+}
+
+/* ===========================
+   PREMIUM FOOTER
+=========================== */
+
+.footer{
+
+padding:80px 20px;
+
+margin-top:80px;
+
+border-top:1px solid var(--border);
+
+text-align:center;
+
+}
+
+.footer-content{
+
+max-width:700px;
+
+margin:auto;
+
+}
+
+.footer-content h3{
+
+font-size:34px;
+
+margin-bottom:15px;
+
+}
+
+.footer-content p{
+
+color:var(--muted);
+
+margin-bottom:12px;
+
+line-height:1.8;
+
+}
+
+/* ===========================
+   PREMIUM ANIMATIONS
+=========================== */
+
+.feature-card,
+.timeline-item,
+.project-nav-card,
+.info-card,
+.stat-card,
+.project-image,
+.case-study-card{
+
+transition:
+transform .35s ease,
+box-shadow .35s ease,
+border-color .35s ease;
+
+}
+
+.feature-card:hover,
+.timeline-item:hover,
+.project-nav-card:hover,
+.info-card:hover,
+.stat-card:hover,
+.project-image:hover,
+.case-study-card:hover{
+
+will-change:transform;
+
+}
+
+/* ===========================
+   SCROLL REVEAL SUPPORT
+=========================== */
+
+.fade-up{
+
+opacity:0;
+
+transform:translateY(60px);
+
+transition:
+opacity .8s ease,
+transform .8s ease;
+
+}
+
+.fade-up.show{
+
+opacity:1;
+
+transform:none;
+
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:1024px){
+
+.project-navigation{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+@media(max-width:900px){
+
+.quote-section{
+
+padding:60px 35px;
+
+}
+
+.cta-banner{
+
+padding:70px 35px;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.quote-section h2{
+
+font-size:32px;
+
+}
+
+.cta-banner h2{
+
+font-size:34px;
+
+}
+
+.cta-banner p{
+
+font-size:16px;
+
+}
+
+.project-nav-card{
+
+padding:28px;
+
+}
+
+.footer{
+
+padding:60px 20px;
+
+}
+
+}
+
+@media(max-width:600px){
+
+.quote-section{
+
+padding:45px 24px;
+
+border-radius:20px;
+
+}
+
+.cta-banner{
+
+padding:50px 24px;
+
+border-radius:22px;
+
+}
+
+.footer-content h3{
+
+font-size:28px;
+
+}
+
+}
+
+
