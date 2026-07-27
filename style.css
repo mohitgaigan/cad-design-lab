@@ -1062,3 +1062,394 @@ body.dark .search-box input{
 body.dark .search-box input::placeholder{
     color:#94a3b8;
 }
+
+/* =====================================================
+   WORKSTATION PROJECT PAGE ONLY
+   ===================================================== */
+
+.project-banner{
+    width:100%;
+    display:block;
+    border-radius:24px;
+    overflow:hidden;
+    box-shadow:0 25px 60px rgba(0,0,0,.18);
+}
+
+.section-title{
+    max-width:900px;
+    margin:0 auto 50px;
+    text-align:center;
+}
+
+.section-title h2{
+    font-size:42px;
+    margin-bottom:18px;
+}
+
+.section-title h2::after{
+    margin:16px auto 0;
+}
+
+.section-title p{
+    color:var(--muted);
+    line-height:1.9;
+    font-size:17px;
+}
+
+/* ==============================
+PROJECT STATS
+============================== */
+
+.project-stats{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+gap:25px;
+
+margin-top:10px;
+
+}
+
+.project-stats .stat-card{
+
+background:var(--card);
+
+padding:35px;
+
+text-align:center;
+
+border-radius:20px;
+
+box-shadow:var(--shadow);
+
+border:1px solid var(--border);
+
+transition:.35s;
+
+}
+
+.project-stats .stat-card:hover{
+
+transform:translateY(-8px);
+
+}
+
+.project-stats .stat-card h2{
+
+font-size:42px;
+
+margin-bottom:8px;
+
+color:var(--primary);
+
+}
+
+.project-stats .stat-card h2::after{
+
+display:none;
+
+}
+
+.project-stats .stat-card p{
+
+color:var(--muted);
+
+font-weight:600;
+
+}
+
+/* ==============================
+CASE STUDY CARD
+============================== */
+
+.case-study-card{
+
+background:var(--card);
+
+padding:45px;
+
+border-radius:24px;
+
+box-shadow:var(--shadow);
+
+border:1px solid var(--border);
+
+min-height:auto;
+
+}
+
+.case-study-card h2{
+
+margin-bottom:20px;
+
+}
+
+.case-study-card p{
+
+line-height:1.9;
+
+color:var(--muted);
+
+font-size:16px;
+
+}
+
+.case-study-card ul{
+
+margin-top:20px;
+
+padding-left:22px;
+
+}
+
+.case-study-card li{
+
+margin-bottom:14px;
+
+color:var(--muted);
+
+}
+
+/* ==============================
+FEATURE GRID
+============================== */
+
+.feature-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+gap:25px;
+
+}
+
+.feature-card{
+
+background:var(--card);
+
+padding:35px 28px;
+
+border-radius:22px;
+
+text-align:center;
+
+box-shadow:var(--shadow);
+
+border:1px solid var(--border);
+
+transition:.35s;
+
+}
+
+.feature-card:hover{
+
+transform:translateY(-8px);
+
+}
+
+.feature-card h3{
+
+font-size:42px;
+
+margin-bottom:15px;
+
+}
+
+.feature-card h4{
+
+font-size:20px;
+
+margin-bottom:12px;
+
+}
+
+.feature-card p{
+
+font-size:15px;
+
+color:var(--muted);
+
+line-height:1.8;
+
+}
+
+/* ==============================
+TIMELINE
+============================== */
+
+.timeline{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+gap:30px;
+
+margin-top:40px;
+
+}
+
+.timeline-item{
+
+background:var(--card);
+
+padding:30px;
+
+border-radius:20px;
+
+border-left:5px solid var(--accent);
+
+box-shadow:var(--shadow);
+
+transition:.35s;
+
+}
+
+.timeline-item:hover{
+
+transform:translateY(-8px);
+
+}
+
+.timeline-item h3{
+
+font-size:36px;
+
+color:var(--primary);
+
+margin-bottom:10px;
+
+}
+
+.timeline-item h4{
+
+margin-bottom:15px;
+
+}
+
+.timeline-item p{
+
+color:var(--muted);
+
+line-height:1.8;
+
+}
+
+/* ==============================
+TECH STACK
+============================== */
+
+.tech-stack{
+
+display:flex;
+
+justify-content:center;
+
+gap:18px;
+
+flex-wrap:wrap;
+
+margin-top:20px;
+
+}
+
+.tech-stack span{
+
+padding:14px 24px;
+
+background:var(--card);
+
+border-radius:50px;
+
+border:2px solid var(--accent);
+
+font-weight:600;
+
+transition:.3s;
+
+}
+
+.tech-stack span:hover{
+
+background:var(--accent);
+
+color:#111;
+
+transform:translateY(-3px);
+
+}
+
+/* ==============================
+PROJECT IMAGE
+============================== */
+
+.project-image{
+
+border-radius:22px;
+
+overflow:hidden;
+
+box-shadow:var(--shadow);
+
+}
+
+.project-image img{
+
+width:100%;
+
+display:block;
+
+transition:.45s;
+
+}
+
+.project-image:hover img{
+
+transform:scale(1.05);
+
+}
+
+/* ==============================
+RESPONSIVE
+============================== */
+
+@media(max-width:900px){
+
+.section-title h2{
+
+font-size:34px;
+
+}
+
+.case-study-card{
+
+padding:30px;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.project-stats{
+
+grid-template-columns:1fr;
+
+}
+
+.feature-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.timeline{
+
+grid-template-columns:1fr;
+
+}
+
+}
