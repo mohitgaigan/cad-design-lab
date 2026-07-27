@@ -235,3 +235,38 @@ if (searchInput) {
     });
 
 }
+/* ==========================================================
+   WORKSTATION PROJECT ONLY
+========================================================== */
+
+const workstationProject = document.querySelector(".hero-case-study");
+
+if (workstationProject) {
+
+    const revealItems = document.querySelectorAll(".fade-up");
+
+    const revealObserver = new IntersectionObserver((entries) => {
+
+        entries.forEach(entry => {
+
+            if(entry.isIntersecting){
+
+                entry.target.classList.add("show");
+
+            }
+
+        });
+
+    },{
+
+        threshold:0.15
+
+    });
+
+    revealItems.forEach(item=>{
+
+        revealObserver.observe(item);
+
+    });
+
+}
