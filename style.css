@@ -1453,3 +1453,75 @@ grid-template-columns:1fr;
 }
 
 }
+
+/* ==========================================
+RESEARCH FACILITY PROJECT
+========================================== */
+
+.project-hero{
+    max-width:1200px;
+    margin:0 auto;
+    padding:80px 8% 40px;
+}
+
+.hero-project-image{
+    width:100%;
+    display:block;
+    border-radius:24px;
+    margin-top:40px;
+    box-shadow:var(--shadow);
+}
+
+.gallery-image{
+    width:100%;
+    display:block;
+    border-radius:18px;
+    margin-bottom:25px;
+    box-shadow:var(--shadow);
+}
+
+.breadcrumb{
+    max-width:1200px;
+    margin:30px auto 0;
+    padding:0 8%;
+    color:var(--muted);
+    font-size:14px;
+}
+
+.breadcrumb a{
+    color:var(--primary);
+    text-decoration:none;
+}
+
+.cta-section{
+    max-width:1200px;
+    margin:80px auto;
+    padding:70px 8%;
+    text-align:center;
+}
+
+.primary-btn{
+    display:inline-block;
+    padding:14px 30px;
+    margin-top:30px;
+    background:linear-gradient(135deg,var(--primary),var(--accent));
+    color:#fff;
+    border-radius:50px;
+    text-decoration:none;
+    font-weight:600;
+}
+
+.quote-section{
+    text-align:center;
+}
+
+.quote-section h2{
+    max-width:900px;
+    margin:0 auto 20px;
+}
+
+.quote-section p{
+    max-width:800px;
+    margin:auto;
+}
+
