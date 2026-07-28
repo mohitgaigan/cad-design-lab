@@ -27,6 +27,38 @@ rel="stylesheet">
 
 <body>
 
+<!-- PASSWORD SCREEN -->
+
+<div id="password-screen">
+
+    <div class="login-box">
+
+        <h2>🔒 Private Gallery</h2>
+
+        <p>
+            This gallery contains confidential design work.
+            Please enter the password.
+        </p>
+
+        <input
+            type="password"
+            id="galleryPassword"
+            placeholder="Enter Password">
+
+        <button onclick="checkPassword()">
+            Enter Gallery
+        </button>
+
+        <p id="error"></p>
+
+    </div>
+
+</div>
+
+<!-- HIDDEN CONTENT START -->
+
+<div id="gallery-content" style="display:none;">
+
 
 
 <!-- ==========================================
@@ -1727,6 +1759,41 @@ View Projects →
 
 
 <script src="script.js"></script>
+
+</div>
+
+<script>
+
+const PASSWORD = "Mohit@2026";   // Change this to your own password
+
+function checkPassword(){
+
+    const input = document.getElementById("galleryPassword").value;
+
+    if(input === PASSWORD){
+
+        document.getElementById("password-screen").style.display = "none";
+        document.getElementById("gallery-content").style.display = "block";
+
+    }else{
+
+        document.getElementById("error").innerHTML = "❌ Incorrect Password";
+
+    }
+
+}
+
+document.getElementById("galleryPassword").addEventListener("keypress", function(e){
+
+    if(e.key === "Enter"){
+
+        checkPassword();
+
+    }
+
+});
+
+</script>
 
 </body>
 
