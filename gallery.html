@@ -1789,10 +1789,17 @@ document.getElementById("password-screen").style.opacity="0";
 
 setTimeout(()=>{
 
-document.getElementById("password-screen").style.display="none";
-document.getElementById("gallery-content").style.display="block";
+const screen = document.getElementById("password-screen");
 
-},400);
+screen.style.opacity = "0";
+
+setTimeout(() => {
+
+    screen.style.display = "none";
+    document.getElementById("gallery-content").style.display = "block";
+
+}, 400);
+
 
 }else{
 
