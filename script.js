@@ -235,3 +235,54 @@ if (searchInput) {
     });
 
 }
+// ===== PASSWORD PROTECTION =====
+
+const passwordInput = document.getElementById("galleryPassword");
+
+if (passwordInput) {
+
+    const PASSWORD = "Design@1937";
+    let attempts = 0;
+
+    function checkPassword() {
+
+        const input = passwordInput.value;
+
+        if (input === PASSWORD) {
+
+            const screen = document.getElementById("password-screen");
+
+            screen.style.opacity = "0";
+
+            setTimeout(() => {
+                screen.style.display = "none";
+                document.getElementById("gallery-content").style.display = "block";
+            }, 400);
+
+        } else {
+
+            attempts++;
+
+            document.getElementById("error").textContent =
+                `❌ Incorrect Password (${attempts}/3)`;
+
+            passwordInput.value = "";
+            passwordInput.focus();
+
+            if (attempts >= 3) {
+                document.getElementById("error").textContent = "Access Denied";
+                document.querySelector(".login-box button").disabled = true;
+            }
+        }
+    }
+
+    window.checkPassword = checkPassword;
+
+    passwordInput.addEventListener("keypress", function (e) {
+        if (e.key === "Enter") {
+            checkPassword();
+        }
+    });
+
+    passwordInput.focus();
+}
