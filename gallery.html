@@ -33,25 +33,36 @@ rel="stylesheet">
 
     <div class="login-box">
 
-        <h2>🔒 Private Gallery</h2>
+<span class="lock-icon">🔒</span>
 
-        <p>
-            This gallery contains confidential design work.
-            Please enter the password.
-        </p>
+<h2>Private Portfolio</h2>
 
-        <input
-            type="password"
-            id="galleryPassword"
-            placeholder="Enter Password">
+<p>
 
-        <button onclick="checkPassword()">
-            Enter Gallery
-        </button>
+Confidential Engineering Design Gallery
 
-        <p id="error"></p>
+Authorized Access Only
 
-    </div>
+</p>
+
+<input
+type="password"
+id="galleryPassword"
+placeholder="Enter Password">
+
+<button onclick="checkPassword()">
+
+Access Portfolio
+
+</button>
+
+<p id="error"></p>
+
+<div class="login-footer">
+
+© 2026 Mohit Kumar
+
+</div>
 
 </div>
 
@@ -1764,35 +1775,57 @@ View Projects →
 
 <script>
 
-const PASSWORD = "Design@1937";   // Change this to your own password
+const PASSWORD="Design@1937";
+
+let attempts=0;
 
 function checkPassword(){
 
-    const input = document.getElementById("galleryPassword").value;
+const input=document.getElementById("galleryPassword").value;
 
-    if(input === PASSWORD){
+if(input===PASSWORD){
 
-        document.getElementById("password-screen").style.display = "none";
-        document.getElementById("gallery-content").style.display = "block";
+document.getElementById("password-screen").style.opacity="0";
 
-    }else{
+setTimeout(()=>{
 
-        document.getElementById("error").innerHTML = "❌ Incorrect Password";
+document.getElementById("password-screen").style.display="none";
+document.getElementById("gallery-content").style.display="block";
 
-    }
+},400);
+
+}else{
+
+attempts++;
+
+document.getElementById("error").innerHTML=
+"Incorrect Password ("+attempts+"/3)";
+
+document.getElementById("galleryPassword").value="";
+
+if(attempts>=3){
+
+document.getElementById("error").innerHTML=
+"Access Denied";
+
+document.querySelector(".login-box button").disabled=true;
 
 }
 
-document.getElementById("galleryPassword").addEventListener("keypress", function(e){
+}
 
-    if(e.key === "Enter"){
+}
 
-        checkPassword();
+document.getElementById("galleryPassword")
+.addEventListener("keypress",function(e){
 
-    }
+if(e.key==="Enter"){
+
+checkPassword();
+
+}
 
 });
-
 </script>
 
 </body>
