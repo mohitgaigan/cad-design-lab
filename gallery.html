@@ -33,36 +33,32 @@ rel="stylesheet">
 
     <div class="login-box">
 
-<span class="lock-icon">🔒</span>
+        <span class="lock-icon">🔒</span>
 
-<h2>Private Portfolio</h2>
+        <h2>Private Portfolio</h2>
 
-<p>
+        <p>
+            Confidential Engineering Design Gallery
+            <br>
+            Authorized Access Only
+        </p>
 
-Confidential Engineering Design Gallery
+        <input
+            type="password"
+            id="galleryPassword"
+            placeholder="Enter Password">
 
-Authorized Access Only
+        <button onclick="checkPassword()">
+            Access Portfolio
+        </button>
 
-</p>
+        <p id="error"></p>
 
-<input
-type="password"
-id="galleryPassword"
-placeholder="Enter Password">
+        <div class="login-footer">
+            © 2026 Mohit Kumar
+        </div>
 
-<button onclick="checkPassword()">
-
-Access Portfolio
-
-</button>
-
-<p id="error"></p>
-
-<div class="login-footer">
-
-© 2026 Mohit Kumar
-
-</div>
+    </div>
 
 </div>
 
@@ -1775,64 +1771,65 @@ View Projects →
 
 <script>
 
-const PASSWORD="Design@1937";
-
-let attempts=0;
+const PASSWORD = "Design@1937";
+let attempts = 0;
 
 function checkPassword(){
 
-const input=document.getElementById("galleryPassword").value;
+    const input = document.getElementById("galleryPassword").value;
 
-if(input===PASSWORD){
+    if(input === PASSWORD){
 
-document.getElementById("password-screen").style.opacity="0";
+        const screen = document.getElementById("password-screen");
 
-setTimeout(()=>{
+        screen.style.opacity = "0";
 
-const screen = document.getElementById("password-screen");
+        setTimeout(() => {
 
-screen.style.opacity = "0";
+            screen.style.display = "none";
+            document.getElementById("gallery-content").style.display = "block";
 
-setTimeout(() => {
+        }, 400);
 
-    screen.style.display = "none";
-    document.getElementById("gallery-content").style.display = "block";
+    }else{
 
-}, 400);
+        attempts++;
 
+        document.getElementById("error").innerHTML =
+            "❌ Incorrect Password (" + attempts + "/3)";
 
-}else{
+        document.getElementById("galleryPassword").value = "";
 
-attempts++;
+        document.getElementById("galleryPassword").focus();
 
-document.getElementById("error").innerHTML=
-"Incorrect Password ("+attempts+"/3)";
+        if(attempts >= 3){
 
-document.getElementById("galleryPassword").value="";
+            document.getElementById("error").innerHTML = "Access Denied";
 
-if(attempts>=3){
+            document.querySelector(".login-box button").disabled = true;
 
-document.getElementById("error").innerHTML=
-"Access Denied";
+        }
 
-document.querySelector(".login-box button").disabled=true;
-
-}
+    }
 
 }
 
-}
+document.getElementById("galleryPassword").addEventListener("keypress", function(e){
 
-document.getElementById("galleryPassword")
-.addEventListener("keypress",function(e){
+    if(e.key === "Enter"){
 
-if(e.key==="Enter"){
+        checkPassword();
 
-checkPassword();
-
-}
+    }
 
 });
+
+window.onload = function(){
+
+    document.getElementById("galleryPassword").focus();
+
+};
+
 </script>
 
 </body>
