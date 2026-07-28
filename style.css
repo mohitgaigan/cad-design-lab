@@ -1560,14 +1560,20 @@ PRIVATE GALLERY LOGIN
 #password-screen{
     position:fixed;
     inset:0;
+
     display:flex;
     justify-content:center;
     align-items:center;
+
     background:
         linear-gradient(rgba(10,10,10,.75),rgba(10,10,10,.75)),
         url("images/gallery/STAFF WORKSTATION IMAGE.png") center/cover no-repeat;
+
     backdrop-filter:blur(8px);
+
     z-index:999999;
+
+    transition:opacity .4s ease;
 }
 
 .login-box{
