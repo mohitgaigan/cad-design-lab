@@ -1527,4 +1527,30 @@ RESEARCH FACILITY PROJECT
     max-width:800px;
     margin:auto;
 }
+/* ==========================================
+RESEARCH FACILITY GALLERY FIX
+========================================== */
+
+.gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
+    gap:30px;
+    margin-top:40px;
+}
+
+.gallery-grid img{
+    width:100%;
+    height:280px;
+    display:block;
+    object-fit:cover;
+    object-position:center;
+    border-radius:18px;
+    box-shadow:var(--shadow);
+    transition:.35s;
+    cursor:pointer;
+}
+
+.gallery-grid img:hover{
+    transform:scale(1.03);
+}
 
