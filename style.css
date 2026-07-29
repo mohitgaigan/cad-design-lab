@@ -1726,3 +1726,39 @@ font-size:13px;
 opacity:.7;
 
 }
+
+/* ==========================================
+   CERTIFICATE SLIDER
+========================================== */
+
+.certificate-slider {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    margin-top: 50px;
+}
+
+.certificate-track {
+    display: flex;
+    gap: 30px;
+    width: max-content;
+    animation: certificateScroll 25s linear infinite;
+}
+
+.certificate-track:hover {
+    animation-play-state: paused;
+}
+
+@keyframes certificateScroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+.certificate-card {
+    flex: 0 0 340px;
+}
