@@ -1737,6 +1737,43 @@ opacity:.7;
     position: relative;
     margin-top: 50px;
 }
+.certificate-slider::before,
+.certificate-slider::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    width:120px;
+
+    height:100%;
+
+    z-index:10;
+
+    pointer-events:none;
+}
+.certificate-slider::before{
+
+    left:0;
+
+    background:linear-gradient(
+        to right,
+        var(--bg),
+        transparent
+    );
+}
+.certificate-slider::after{
+
+    right:0;
+
+    background:linear-gradient(
+        to left,
+        var(--bg),
+        transparent
+    );
+}
 
 .certificate-track {
     display: flex;
@@ -1770,7 +1807,7 @@ opacity:.7;
     backdrop-filter:blur(12px);
 
     border-radius:24px;
-    overflow:hidden;
+    overflow:visible;
 
     border:1px solid rgba(255,255,255,.45);
 
