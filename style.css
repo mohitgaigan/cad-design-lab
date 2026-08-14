@@ -1933,3 +1933,29 @@ opacity:.7;
 
     overflow:hidden;
 }
+
+/* ===================================
+   Gallery Background Collage
+=================================== */
+
+.gallery-background{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:url("images/background/collage-bg.png") center center/cover no-repeat;
+    opacity:0.08;
+    filter:grayscale(100%);
+    z-index:-2;
+    pointer-events:none;
+}
+
+.gallery-overlay{
+    position:fixed;
+    inset:0;
+    background:white;
+    opacity:.85;
+    z-index:-1;
+    pointer-events:none;
+}
